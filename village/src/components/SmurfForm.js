@@ -7,8 +7,7 @@ class SmurfForm extends Component {
       smurf: {
         name: '',
         age: '',
-        height: '',
-        id: ''
+        height: ''
       }
     };
   }
@@ -16,7 +15,7 @@ class SmurfForm extends Component {
   changeHandler = e => {
     e.persist();
     this.setState(prevState => ({
-      item: {
+      smurf: {
         ...prevState.smurf,
         [e.target.name]: e.target.value
       }
@@ -28,9 +27,8 @@ class SmurfForm extends Component {
     this.setState({
       smurf: {
         name: '',
-        age: '',
         height: '',
-        id: ''
+        age: ''
       }
     })
   }
@@ -60,13 +58,7 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-           <input
-            type="text"
-            onChange={this.changeHandler}
-            placeholder="ID"
-            value={this.state.id}
-            name="id"
-          />
+           
           <button onClick={this.submitHandler} type="submit">Add to the village</button>
         </form>
       </div>
