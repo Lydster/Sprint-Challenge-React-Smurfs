@@ -1,3 +1,21 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.nav {
+  padding: 30px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 20px;
+  font-size: 3em;
+  color: purple;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: hotpink;
 }
