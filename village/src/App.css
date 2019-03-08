@@ -1,21 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+
 .App {
   text-align: center;
   box-sizing: border-box;
   font-size: 62.5%;
+  background-color: peachpuff;
+  
 }
 
 .nav {
   padding: 30px;
+  background-color: white;
 }
 
 .link {
   text-decoration: none;
-  padding: 20px;
+  padding: 40px;
   font-size: 3em;
-  color: purple;
+  color: blue;
   cursor: pointer;
 }
 
 .link:hover {
   color: hotpink;
+}
+
+.footer {
+  background-image: url('https://lh3.googleusercontent.com/jjB61JNZrN6fu28WMO3ExBdTMzFt1cYWGWKsZcVG6T-8fQNP4PfQ4vR4-rBb3qzXBfeIDnQfa33ZGEhJ7O9b0gLeitOYjsaHUjhpsDEZtfwtZgN0rcuoww84ntDRLJxBiKHKIEZu5A=w2400');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 200px;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 200px;
+  border-bottom: 3px solid #eee;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+
+button {
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: lightcoral;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: coral;
+}
+
+.delete-btn {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: lightgrey;
+
+}
+
+.delete-btn:hover {
+  background-color: coral;
+}
+
+.Smurf {
+  border: 1px solid blue;
+  width: 250px;
+  height: 220px;
+  padding: 40px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+
+}
+
+.Smurfs1 {
+  display: flex;
+}
+
+.SmurfForm {
+  width: 300px;
+  margin: 10px auto;
+  border: 1px solid blue;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(240, 232, 232);
+  
+}
+
+.smurfName {
+  font-size: 2em;
+  color: blue;
+}
+
+.title {
+  font-size: 4em;
+  color: blue;
+}
+
+strong {
+  color: blue;
+  font-size: 1.5em;
+}
+
+.sAge {
+  color: blue;
+  font-size: 1.5em;
 }

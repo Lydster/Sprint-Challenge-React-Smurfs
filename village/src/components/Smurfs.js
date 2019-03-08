@@ -6,8 +6,8 @@ class Smurfs extends Component {
   render() {
     return (
       <div className="Smurfs">
-        <h1>Smurf Village</h1>
-        <ul>
+        <h1 className="title">Smurf Village</h1>
+        <ul className="Smurfs1">
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
@@ -16,12 +16,13 @@ class Smurfs extends Component {
                 age={smurf.age}
                 height={smurf.height}
                 key={smurf.id}
-                deleteSmurf={smurf.deleteSmurf}
+                deleteSmurf={this.props.deleteSmurf}
               />
             );
           })}
         </ul>
-      </div>
+        </div>
+
     );
   }
 }

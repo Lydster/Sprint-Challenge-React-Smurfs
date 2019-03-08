@@ -41,9 +41,13 @@ class App extends Component {
 
   deleteSmurf = (e, id) => {
     e.preventDefault();
-    axios.delete(`http://localhost:3333/smurfs/smurfs/${id}`)
+    axios.delete(`http://localhost:3333/smurfs/${id}`)
       .then((res) => {
         console.log(res.data)
+        this.setState({
+          smurfs: res.data
+
+        })
           })
       .catch((err) => {console.log(err)})
   }
@@ -58,8 +62,8 @@ class App extends Component {
 
       <div className="App">
         <nav className='nav'>
-          <NavLink className="link" exact to="/">Smurfs</NavLink>
-          <NavLink className="link" to="/smurf-form">Add a Smurf</NavLink>
+          <NavLink className="link" exact to="/">Just Smurfs</NavLink>
+          <NavLink className="link" exact to="/smurf-form">Add a Smurf</NavLink>
         </nav>
         <Route 
           path="/" 
@@ -71,6 +75,7 @@ class App extends Component {
           render={props => <SmurfForm {...props} addSmurf={this.addSmurf}/>}
         /> 
         
+        <footer className="footer"></footer>
       </div>
     );
   }
