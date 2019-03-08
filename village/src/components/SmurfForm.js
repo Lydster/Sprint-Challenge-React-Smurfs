@@ -4,54 +4,75 @@ class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      smurf: {
+        name: '',
+        age: '',
+        height: '',
+        id: ''
+      }
     };
   }
 
-  addSmurf = event => {
-    event.preventDefault();
-    // add code to create the smurf using the api
-
-    this.setState({
-      name: '',
-      age: '',
-      height: ''
-    });
+  changeHandler = e => {
+    e.persist();
+    this.setState(prevState => ({
+      item: {
+        ...prevState.smurf,
+        [e.target.name]: e.target.value
+      }
+    }))
   }
 
-  handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  submitHandler = e => {
+    this.props.addSmurf(e, this.state.smurf);
+    this.setState({
+      smurf: {
+        name: '',
+        age: '',
+        height: '',
+        id: ''
+      }
+    })
+  }
 
   render() {
     return (
       <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
+        <form onSubmit={this.submitHandler}>
           <input
-            onChange={this.handleInputChange}
+            type="text"
+            onChange={this.changeHandler}
             placeholder="name"
             value={this.state.name}
             name="name"
           />
           <input
-            onChange={this.handleInputChange}
+            type="text"
+            onChange={this.changeHandler}
             placeholder="age"
             value={this.state.age}
             name="age"
           />
           <input
-            onChange={this.handleInputChange}
+            type="text"
+            onChange={this.changeHandler}
             placeholder="height"
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+           <input
+            type="text"
+            onChange={this.changeHandler}
+            placeholder="ID"
+            value={this.state.id}
+            name="id"
+          />
+          <button onClick={this.submitHandler} type="submit">Add to the village</button>
         </form>
       </div>
     );
   }
 }
+
 
 export default SmurfForm;
